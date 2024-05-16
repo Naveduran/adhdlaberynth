@@ -2,8 +2,11 @@
 /* TODO:
 - Show score on screen
 - When touching a border change direction
-- Count the times walls are touched
+- Count the times walls are touched using get() to check
+  the color of the position
 - Suggest a direction (usability)
+- use local storage tomake score persists between browsing 
+   sessions and page reloads (storeItem())
 */
 
 // Save the previous mouse position
@@ -121,6 +124,7 @@ function drawButton(string, x_pos, y_pos) {
 function draw() {
     if (isDrawing){
         stroke(drawColor);
+        strokeWeight(5);
         line(mouseX, mouseY, lastX, lastY);
         updateMouse();
     }
